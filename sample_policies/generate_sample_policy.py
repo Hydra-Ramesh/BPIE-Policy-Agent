@@ -1,0 +1,56 @@
+"""
+Script to generate a sample BPIE Official Academic & Hostel Regulations PDF
+for quick testing of the Policy Agent.
+Uses reportlab or built-in fpdf if available, or writes a rich text/pdf.
+"""
+def create_sample_text():
+    return """BISHNUPUR PUBLIC INSTITUTE OF ENGINEERING (BPIE)
+BISHNUPUR, BANKURA - A POLYTECHNIC COLLEGE (ESTD. 2010)
+OFFICIAL CODE OF CONDUCT, ACADEMIC REGULATIONS & HOSTEL RULES (2026-2027)
+
+CHAPTER 1: ACADEMIC POLICIES & ATTENDANCE REGULATIONS
+1.1 Minimum Attendance Requirement:
+Every regular registered student must maintain a minimum attendance of 75% in all lectures, practical laboratory sessions, and tutorials across each semester. 
+1.2 Medical Condonation:
+Students falling short of 75% due to documented hospitalization or severe medical grounds may be granted condonation up to 10% (minimum 65% attendance) upon submission of a certified medical certificate from a Registered Medical Practitioner within 7 calendar days of recovery, subject to approval by the Principal/Academic Head.
+1.3 Debarment from Examinations:
+Students securing less than 65% aggregate attendance under any circumstance will be strictly debarred from appearing in the Semester End Examinations and will be required to repeat the semester.
+
+CHAPTER 2: CONTINUOUS EVALUATION & SEMESTER EXAMINATIONS
+2.1 Grading Scheme:
+Evaluation is based on continuous internal assessment (30 marks) and End-Semester Examination (70 marks). Internal assessments comprise mid-term tests (15 marks), laboratory assignments (10 marks), and classroom attendance/conduct (5 marks).
+2.2 Passing Criteria:
+A candidate must secure at least 40% marks in internal assessment and 40% in the semester examination individually, and a total aggregate of 45% in each subject to qualify for promotion.
+2.3 Backlog Clearances:
+Backlog exams (supplementary) are scheduled during odd/even semesters. A maximum of 4 backlogs can be carried over to the subsequent academic year.
+
+CHAPTER 3: HOSTEL REGULATIONS & RESIDENCE CODE
+3.1 Curfew Hours:
+All hostel inmates must return to the campus hostel premises by 7:30 PM (Winter) and 8:00 PM (Summer). Late entry without prior sanctioned gate pass from the Hostel Warden will incur a fine of Rs. 500 for the first offense and disciplinary notice for subsequent violations.
+3.2 Night-Out and Gate Pass Rules:
+Students requesting leave for home visits or outstation travel must apply for an e-Gate Pass approved by their local guardian and hostel warden at least 24 hours in advance.
+3.3 Substance Abuse and Prohibited Items:
+Possession, consumption, or distribution of alcohol, narcotics, smoking items, or dangerous electrical appliances (immersion heaters, induction stoves) inside hostel rooms is strictly forbidden and punishable with immediate expulsion from the hostel.
+
+CHAPTER 4: ANTI-RAGGING STATUTE & DISCIPLINARY ACTIONS
+4.1 Zero-Tolerance Policy:
+In accordance with AICTE & UGC regulations, BPIE maintains a Zero-Tolerance Policy toward ragging in any form (verbal, physical, psychological, or online).
+4.2 Anti-Ragging Committee & Helpline:
+Ragging complaints can be lodged 24/7 with the Anti-Ragging Committee via anti-ragging@bpie.ac.in or emergency helpline 1800-180-5522.
+4.3 Penalties for Ragging:
+Any student found guilty of ragging shall face immediate suspension, rustication for 1 to 4 semesters, cancellation of admission, and mandatory reporting to local law enforcement authorities under Indian Penal Code provisions.
+
+CHAPTER 5: FEES AND REFUND GUIDELINES
+5.1 Semester Tuition Fees:
+Tuition and laboratory fees must be deposited before the commencement of each semester (latest by 15th January for Even Semester and 15th July for Odd Semester). Late payment beyond the due date attracts a late penalty of Rs. 50 per day up to a maximum of 15 days.
+5.2 Fee Refund on Cancellation:
+If a student withdraws their admission before the formal orientation date, 90% of the tuition fee is refundable. After the commencement of classes, only caution deposits are refundable upon clearance of all institute dues.
+"""
+
+if __name__ == "__main__":
+    import os
+    text = create_sample_text()
+    txt_path = os.path.join(os.path.dirname(__file__), "bpie_academic_regulations.txt")
+    with open(txt_path, "w", encoding="utf-8") as f:
+        f.write(text)
+    print(f"Sample regulations written to: {txt_path}")

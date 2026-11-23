@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: bpie-policy-agent-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: gunicorn --chdir backend app:app --workers 2 --timeout 120
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: ALLOWED_EMAIL_DOMAIN
+        value: "@bpie.ac.in"
+      - key: ADMIN_EMAILS
+        value: "admin@bpie.ac.in,principal@bpie.ac.in"
