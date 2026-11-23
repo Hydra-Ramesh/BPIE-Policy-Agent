@@ -214,7 +214,7 @@ Your browser will open `http://localhost:8501`.
    - **Environment**: `Python 3`
    - **Root Directory**: Leave blank or set `backend`
    - **Build Command**: `pip install -r backend/requirements.txt`
-   - **Start Command**: `gunicorn --chdir backend app:app --workers 2 --timeout 120`
+   - **Start Command**: `gunicorn --chdir backend --bind 0.0.0.0:$PORT app:app --workers 2 --timeout 120`
 6. Add Environment Variables in Render:
    | Key | Value |
    |---|---|
